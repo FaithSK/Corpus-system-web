@@ -4,7 +4,7 @@
     <template #header>
       <div class="card-header">
         <h3>
-          <el-icon style="margin-right: 10px;"><UserFilled /></el-icon>学生管理
+          <el-icon style="margin-right: 10px;"><UserFilled /></el-icon>单词管理
         </h3>
 
         <!--搜索区域 start-->
@@ -16,7 +16,7 @@
             </el-col>
             <el-col :span="11">
               <div class="my-button">
-              <el-button plain style="width: 100%;" color="#2fa7b9" @click="addStudent">添加学生</el-button>
+              <el-button plain style="width: 100%;" color="#2fa7b9" @click="addStudent">添加数据</el-button>
                 <el-button @click="exportExcelAction" type="primary">
                   <el-icon style="margin-right: 1px"><Download /></el-icon>导出 Excel
                 </el-button>
@@ -41,41 +41,41 @@
                 :header-cell-style="{fontSize: '15px', background: '#178557',color: 'white',textAlign: 'center'}">
 
         <el-table-column label="序号" width="100" type="index" :index="Nindex"/>
-        <el-table-column label="学号">
+        <el-table-column label="出处">
           <template #default="scope">
             <span>{{scope.row.stuno}}</span>
           </template>
         </el-table-column>
 
-        <el-table-column label="姓名">
+        <el-table-column label="单词">
           <template #default="scope">
             <span>{{scope.row.name}}</span>
           </template>
         </el-table-column>
 
-        <el-table-column label="班级">
+        <el-table-column label="课程">
           <template #default="scope">
             <span>{{scope.row.gradeClass.code}}</span>
           </template>
         </el-table-column>
 
-        <el-table-column label="性别">
+        <el-table-column label="释义">
           <template #default="scope">
-            <span>{{scope.row.sex}}</span>
+            <span>{{scope.row.translate}}</span>
           </template>
         </el-table-column>
 
-        <el-table-column label="手机号">
-          <template #default="scope">
-            <span>{{scope.row.phone}}</span>
-          </template>
-        </el-table-column>
+<!--        <el-table-column label="手机号">-->
+<!--          <template #default="scope">-->
+<!--            <span>{{scope.row.phone}}</span>-->
+<!--          </template>-->
+<!--        </el-table-column>-->
 
-        <el-table-column label="QQ号">
-          <template #default="scope">
-            <span>{{scope.row.qq}}</span>
-          </template>
-        </el-table-column>
+<!--        <el-table-column label="QQ号">-->
+<!--          <template #default="scope">-->
+<!--            <span>{{scope.row.qq}}</span>-->
+<!--          </template>-->
+<!--        </el-table-column>-->
 
         <el-table-column label="创建时间">
           <template #default="scope">
@@ -151,10 +151,10 @@ import EditStudent from "./components/EditStudent.vue";
 import {exportExcel} from "../../utils/exprotExcel";
 // 新增学生弹窗状态
 const addStudentDialogFormVisible = ref(false)
-const addTitle = ref('新增学生')
+const addTitle = ref('新增单词')
 // 编辑学生弹窗状态
 const editStudentDialogFormVisible = ref(false)
-const editTitle = ref('编辑学生')
+const editTitle = ref('编辑单词')
 const state = reactive({
   // 搜索表单内容
   searchValue: "",
@@ -246,10 +246,10 @@ const delStudent = async (id:number)=> {
 }
 // 导出列表
 const column = [
-  {name: 'id',label: '学生id'},
-  {name: 'name',label: '学生姓名'},
-  {name: 'stuno',label: '学号'},
-  {name: 'sex',label: '性别'},
+  {name: 'id',label: '单词id'},
+  {name: 'name',label: '单词'},
+  {name: 'stuno',label: '出处'},
+  {name: 'translate',label: '释义'},
   {name: 'phone',label: '手机号'},
   {name: 'qq',label: 'QQ'}
 ]
@@ -257,7 +257,7 @@ const exportExcelAction = () => {
   exportExcel({
     column,
     data:state.tableData,
-    filename: '学生信息数据',
+    filename: '单词信息数据',
     format: 'xlsx',
     autoWidth: true,
   })

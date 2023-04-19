@@ -4,7 +4,7 @@
     <template #header>
       <div class="card-header">
         <h3>
-          <el-icon style="margin-right: 10px;"><UserFilled /></el-icon>班级管理
+          <el-icon style="margin-right: 10px;"><UserFilled /></el-icon>统计数据
         </h3>
 
         <!--搜索区域 start-->
@@ -16,7 +16,7 @@
             </el-col>
             <el-col :span="11">
               <div class="my-button">
-                <el-button plain style="width: 100%;" color="#2fa7b9" @click="addGradeClass">添加班级</el-button>
+                <el-button plain style="width: 100%;" color="#2fa7b9" @click="addGradeClass">添加数据</el-button>
                 <el-button @click="exportExcelAction" type="primary">
                   <el-icon style="margin-right: 1px"><Download /></el-icon>导出 Excel
                 </el-button>
@@ -41,31 +41,31 @@
                 :header-cell-style="{fontSize: '15px', background: '#178557',color: 'white',textAlign: 'center'}">
 
         <el-table-column label="序号" width="100" type="index" :index="Nindex"/>
-        <el-table-column label="班级编号">
+        <el-table-column label="课程编号">
           <template #default="scope">
             <span>{{scope.row.code}}</span>
           </template>
         </el-table-column>
 
-        <el-table-column label="班级名称">
+        <el-table-column label="课程名称">
           <template #default="scope">
             <span>{{scope.row.name}}</span>
           </template>
         </el-table-column>
 
-        <el-table-column label="年级">
-          <template #default="scope">
-            <span>{{scope.row.grade}}</span>
-          </template>
-        </el-table-column>
+<!--        <el-table-column label="年级">-->
+<!--          <template #default="scope">-->
+<!--            <span>{{scope.row.grade}}</span>-->
+<!--          </template>-->
+<!--        </el-table-column>-->
 
-        <el-table-column label="班级">
-          <template #default="scope">
-            <span>{{scope.row.clazz}}</span>
-          </template>
-        </el-table-column>
+<!--        <el-table-column label="班级">-->
+<!--          <template #default="scope">-->
+<!--            <span>{{scope.row.clazz}}</span>-->
+<!--          </template>-->
+<!--        </el-table-column>-->
 
-        <el-table-column label="班级人数">
+        <el-table-column label="单词数量">
           <template #default="scope">
             <span>{{scope.row.students.length}}</span>
           </template>

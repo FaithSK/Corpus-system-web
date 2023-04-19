@@ -2,37 +2,37 @@
   <el-form ref="ruleFormRef" :rules="rules"  :model="formStudent"  label-width="80px">
     <el-row>
       <el-col :span="12">
-        <el-form-item prop="gradeClass" label="所属班级">
-          <el-select v-model="formStudent.gradeClass.id" placeholder="请选择班级" style="width: 100%;">
+        <el-form-item prop="gradeClass" label="所属课程">
+          <el-select v-model="formStudent.gradeClass.id" placeholder="请选择课程" style="width: 100%;">
             <el-option v-for="item in gradeClassOptions" :key="item.id" :label="item.name" :value="item.id" />
           </el-select>
         </el-form-item>
       </el-col>
       <el-col :span="12">
-        <el-form-item label="学号" prop="stuno">
-          <el-input v-model="formStudent.stuno" placeholder="请输入学号" />
+        <el-form-item label="出处" prop="stuno">
+          <el-input v-model="formStudent.stuno" placeholder="请输入出处" />
         </el-form-item>
       </el-col>
       <el-col :span="12">
-        <el-form-item label="学生姓名" prop="name">
-          <el-input v-model="formStudent.name" placeholder="请输入学生姓名" />
+        <el-form-item label="单词" prop="name">
+          <el-input v-model="formStudent.name" placeholder="请输入单词" />
         </el-form-item>
       </el-col>
       <el-col :span="12">
-        <el-form-item label="性别" prop="sex">
-          <el-input v-model="formStudent.sex" placeholder="请输入性别" />
+        <el-form-item label="释义" prop="translate">
+          <el-input v-model="formStudent.sex" placeholder="请输入单词释义" />
         </el-form-item>
       </el-col>
-      <el-col :span="12">
-        <el-form-item label="手机号" prop="phone">
-          <el-input v-model="formStudent.phone" placeholder="请输入手机号" />
-        </el-form-item>
-      </el-col>
-      <el-col :span="12">
-        <el-form-item label="QQ号" prop="qq">
-          <el-input v-model="formStudent.qq" placeholder="请输入QQ号" />
-        </el-form-item>
-      </el-col>
+<!--      <el-col :span="12">-->
+<!--        <el-form-item label="手机号" prop="phone">-->
+<!--          <el-input v-model="formStudent.phone" placeholder="请输入手机号" />-->
+<!--        </el-form-item>-->
+<!--      </el-col>-->
+<!--      <el-col :span="12">-->
+<!--        <el-form-item label="QQ号" prop="qq">-->
+<!--          <el-input v-model="formStudent.qq" placeholder="请输入QQ号" />-->
+<!--        </el-form-item>-->
+<!--      </el-col>-->
       <el-col :span="24">
         <el-form-item label="备注">
           <el-input
@@ -73,12 +73,12 @@ const formStudent = reactive({
 const ruleFormRef = ref<FormInstance>()
 // 定义表单约束规则对象
 const rules = reactive<FormRules>({
-  name: [{ required: true, message: '学生姓名不能为空', trigger: 'blur' }],
-  sex: [{ required: true, message: '性别不能为空', trigger: 'blur' }],
-  phone: [{ required: true, message: '手机号不能为空', trigger: 'blur' }],
-  qq: [{ required: true, message: 'qq号不能为空', trigger: 'blur' }],
+  name: [{ required: true, message: '单词不能为空', trigger: 'blur' }],
+  sex: [{ required: true, message: '释义不能为空', trigger: 'blur' }],
+  // phone: [{ required: true, message: '手机号不能为空', trigger: 'blur' }],
+  // qq: [{ required: true, message: 'qq号不能为空', trigger: 'blur' }],
   gradeClass: [{ required: true, message: '班级不能为空', trigger: 'blur' }],
-  stuno: [{ required: true, message: '班级不能为空', trigger: 'blur' }],
+  stuno: [{ required: true, message: '出处不能为空', trigger: 'blur' }],
 })
 // 新增学生信息
 const addStudent = async (formEl: FormInstance | undefined) => {

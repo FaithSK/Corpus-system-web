@@ -105,7 +105,7 @@ export const asyncRoutes = [
                 path: 'gradeclass',
                 name: 'gradeclass',
                 meta: {
-                    title: '班级管理',
+                    title: '统计数据',
                     icon: 'Box',
                     role: ['ROLE_ADMIN']
                 },
@@ -115,7 +115,7 @@ export const asyncRoutes = [
                 path: 'student',
                 name: 'student',
                 meta: {
-                    title: '学生管理',
+                    title: '词汇管理',
                     icon: 'User',
                     role: ['ROLE_ADMIN']
                 },

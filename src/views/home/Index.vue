@@ -20,8 +20,8 @@
           </el-icon>
         </div>
         <div class="data_right">
-          <h1>{{studentNums}}<span>人</span></h1>
-          <p>学生人数</p>
+          <h1>{{studentNums}}<span>个</span></h1>
+          <p>单词个数</p>
         </div>
       </div>
     </el-col>
@@ -34,7 +34,7 @@
         </div>
         <div class="data_right">
           <h1>{{classNums}}<span>个</span></h1>
-          <p>班级个数</p>
+          <p>统计数据个数</p>
         </div>
       </div>
     </el-col>
