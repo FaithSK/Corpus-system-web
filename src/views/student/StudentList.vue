@@ -90,7 +90,7 @@
             <el-button size="small" @click="editStudent(scope.row.id)"
                        style="margin: 0 0 10px 10px;">编辑</el-button>
             <el-popconfirm confirm-button-text="确定" cancel-button-text="取消" :icon="Delete"
-                           icon-color="#626AEF" :title="'确定删除学生名为“'+scope.row.name+'”的学生吗？'"
+                           icon-color="#626AEF" :title="'确定删除单词名为“'+scope.row.name+'”的单词吗？'"
                            @confirm="delStudent(scope.row.id)">
               <template #reference>
                 <el-button size="small" type="danger" style="margin-bottom: 10px;">删除</el-button>
@@ -165,6 +165,7 @@ const state = reactive({
   pageIndex: 1, //当前页码
   loading: false, // 数据加载
 })
+
 // 获取学生列表数据
 const loadData = async (state: any)=> {
   state.loading = true

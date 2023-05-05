@@ -14,7 +14,7 @@ export const staticRouter = [
     {
         path: '/login',
         name: 'Login',
-        meta: { title: '学生信息管理系统 - 登录'},
+        meta: { title: '语料库管理系统 - 登录'},
         component: ()=> import('../views/login/Login.vue'),
         isMenu: false
 
