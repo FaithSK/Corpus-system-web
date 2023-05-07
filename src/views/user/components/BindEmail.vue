@@ -122,8 +122,6 @@ const getCode = async (type: number) => {
         type: 'success',
       })
     }
-
-
 }
 const { toBind } = toRefs(state)
 // 时间计时器

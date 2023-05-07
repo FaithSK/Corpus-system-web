@@ -55,7 +55,7 @@
 
         <el-table-column label="课程">
           <template #default="scope">
-            <span>{{scope.row.gradeClass.code}}</span>
+            <span>{{scope.row.gradeClass ? scope.row.gradeClass.name : ''}}</span>
           </template>
         </el-table-column>
 
@@ -64,18 +64,6 @@
             <span>{{scope.row.translate}}</span>
           </template>
         </el-table-column>
-
-<!--        <el-table-column label="手机号">-->
-<!--          <template #default="scope">-->
-<!--            <span>{{scope.row.phone}}</span>-->
-<!--          </template>-->
-<!--        </el-table-column>-->
-
-<!--        <el-table-column label="QQ号">-->
-<!--          <template #default="scope">-->
-<!--            <span>{{scope.row.qq}}</span>-->
-<!--          </template>-->
-<!--        </el-table-column>-->
 
         <el-table-column label="创建时间">
           <template #default="scope">
@@ -166,7 +154,7 @@ const state = reactive({
   loading: false, // 数据加载
 })
 
-// 获取学生列表数据
+// 获取单词列表数据
 const loadData = async (state: any)=> {
   state.loading = true
   // 先清空数据
