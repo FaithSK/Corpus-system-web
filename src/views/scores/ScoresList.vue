@@ -149,7 +149,7 @@
 <script setup lang="ts">
 import { ref, reactive,toRefs, onMounted  } from 'vue'
 // 定义班级下拉选择项
-import {gradeClassListApi} from "../../api/student/student";
+import {gradeClassListApi} from "../../api/student1/student";
 import {getAllCourseListApi} from "../../api/teacher/teacher";
 import {deleteScoresApi, editScoresApi, getScoresListApi, registerScoresApi} from "../../api/scores/scores";
 import { formatTime } from "../../utils/date"

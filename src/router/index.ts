@@ -140,6 +140,16 @@ export const asyncRoutes = [
                     role: ['ROLE_ADMIN']
                 },
                 component: ()=> import('../views/teacher/TeacherList.vue')
+            },
+            {
+                path: 'student1',
+                name: 'student1',
+                meta: {
+                    title: '学生管理',
+                    icon: 'User',
+                    role: ['ROLE_ADMIN']
+                },
+                component: ()=> import('../views/student1/StudentList.vue')
             }
         ]
     },
